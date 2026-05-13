@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>6 meses contigo 💗</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  overflow:hidden;
+  background:#f8bfd1;
+  height:100vh;
+}
+
+/* FONDO */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:linear-gradient(180deg,#f6bfd1 0%,#ffdce8 100%);
+  z-index:-2;
+}
+
+/* CORAZONES */
+.bg-hearts::before{
+  content:"💗 💕 💗 💕 💗 💕 💗";
+  position:fixed;
+  width:100%;
+  top:100%;
+  font-size:28px;
+  opacity:0.18;
+  animation:float 15s linear infinite;
+}
+
+@keyframes float{
+  from{transform:translateY(0);}
+  to{transform:translateY(-130vh);}
+}
+
+/* CONTENEDOR */
+#container{
+  display:flex;
+  width:500vw;
+  height:100vh;
+  transition:transform .6s ease;
+}
+
+/* SLIDE */
+.slide{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  flex-shrink:0;
+}
+
+/* CONTENIDO */
+.content{
+  width:100%;
+  max-width:420px;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* CAJA */
+.box{
+  width:100%;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(10px);
+  padding:35px 25px 35px 120px; /* 👈 MÁS ESPACIO PARA FOTOS */
+  border-radius:28px;
+  box-shadow:0 15px 40px rgba(0,0,0,.12);
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+/* TITULO */
+h1{
+  color:#ff6f9f;
+  font-size:32px;
+  margin-bottom:20px;
+}
+
+/* TEXTO */
+p{
+  font-size:16px;
+  line-height:1.7;
+  color:#444;
+}
+
+/* COLLAGE */
+.photo-collage{
+  position:absolute;
+  left:-40px;
+  top:50%;
+  transform:translateY(-50%);
+  width:170px;
+  height:280px;
+  z-index:5;
+}
+
+/* FOTOS */
+.photo{
+  position:absolute;
+  background:white;
+  padding:8px;
+  border-radius:6px;
+  box-shadow:0 10px 25px rgba(0,0,0,.18);
+  object-fit:cover;
+  transition:.3s;
+}
+
+.photo.big{
+  width:150px;
+  height:190px;
+  left:0;
+  top:20px;
+  transform:rotate(-6deg);
+}
+
+.photo.small.top{
+  width:110px;
+  height:110px;
+  right:-20px;
+  top:0;
+  transform:rotate(5deg);
+}
+
+.photo.small.bottom{
+  width:110px;
+  height:110px;
+  right:-15px;
+  bottom:0;
+  transform:rotate(-4deg);
+}
+
+.photo:hover{
+  transform:scale(1.05) rotate(0deg);
+}
+
+/* CALENDARIO */
+.calendar{
+  margin:0 auto 20px;
+  width:120px;
+  height:120px;
+  background:white;
+  border-radius:22px;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 10px 30px rgba(255,111,159,.2);
+}
+
+.calendar::before{
+  content:"";
+  position:absolute;
+  top:0;
+  width:100%;
+  height:25px;
+  background:#ff6f9f;
+  border-radius:22px 22px 0 0;
+}
+
+.month{
+  font-size:12px;
+  color:#ff6f9f;
+  font-weight:bold;
+}
+
+.day{
+  font-size:42px;
+  font-weight:bold;
+  color:#333;
+}
+
+.year{
+  font-size:12px;
+  color:#999;
+}
+
+/* DOTS */
+.dots{
+  position:fixed;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:8px;
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:rgba(255,255,255,.5);
+}
+
+.dot.active{
+  background:white;
+  transform:scale(1.3);
+}
+
+.swipe-text{
+  position:fixed;
+  bottom:50px;
+  width:100%;
+  text-align:center;
+  color:white;
+  font-size:14px;
+  opacity:.8;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .content{max-width:340px;}
+
+  .box{
+    padding:28px 20px 28px 85px;
+  }
+
+  h1{font-size:27px;}
+  p{font-size:14px;}
+
+  .photo-collage{
+    left:-5px;
+    width:130px;
+    height:240px;
+  }
+
+  .photo.big{width:120px;height:155px;}
+  .photo.small.top,.photo.small.bottom{
+    width:85px;height:85px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg-hearts"></div>
+
+<div id="container">
+
+  <!-- SLIDE 1 -->
+  <section class="slide">
+    <div class="content">
+      <div class="box">
+        <h1>Héctor & Paula 💗</h1>
+
+        <div class="calendar">
+          <div class="month">NOVIEMBRE</div>
+          <div class="day">16</div>
+          <div class="year">2025</div>
+        </div>
+
+        <p>Gracias por hacerme feliz estos 6 meses 💗</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 2 -->
+  <section class="slide">
+    <div class="content">
+      <div class="photo-collage">
+        <img src="foto1.jpg" class="photo big">
+        <img src="foto2.jpg" class="photo small top">
+        <img src="foto3.jpg" class="photo small bottom">
+      </div>
+      <div class="box">
+        <h1>Mi amor</h1>
+        <p>❤️ Gracias por estar conmigo cada día ❤️</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 3 -->
+  <section class="slide">
+    <div class="content">
+      <div class="photo-collage">
+        <img src="foto4.jpg" class="photo big">
+        <img src="foto5.jpg" class="photo small top">
+        <img src="foto6.jpg" class="photo small bottom">
+      </div>
+      <div class="box">
+        <h1>Ojitos lindos</h1>
+        <p>✨Espero seguir viviendo muchas experiencias contigo✨</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 4 -->
+  <section class="slide">
+    <div class="content">
+      <div class="photo-collage">
+        <img src="foto7.jpg" class="photo big">
+        <img src="foto8.jpg" class="photo small top">
+        <img src="foto9.jpg" class="photo small bottom">
+      </div>
+      <div class="box">
+        <h1>Nuestro futuro</h1>
+        <p>Ya cada día queda menos para vivir nuestra vida juntos. Tener unos hijos preciosos,
+          que eres guapísimo y más con esos ojitos❤️
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 5 -->
+  <section class="slide">
+    <div class="content">
+      <div class="photo-collage">
+        <img src="foto10.jpg" class="photo big">
+        <img src="foto11.jpg" class="photo small top">
+        <img src="foto12.jpg" class="photo small bottom">
+      </div>
+      <div class="box">
+        <h1>Te amo</h1>
+        <p>
+        Te amo con todo mi corazón, Héctor. Eres increíble. Eres muy fuerte, que lo sepas, estoy muy orgullosa de ti.  
+        Te quiero mucho y feliz 6 meses ❤️
+        </p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="dots">
+  <span class="dot active"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+<div class="swipe-text">desliza ← →</div>
+
+<script>
+const container = document.getElementById("container");
+const dots = document.querySelectorAll(".dot");
+
+let index = 0;
+const totalSlides = document.querySelectorAll(".slide").length;
+
+function update(){
+  container.style.transform = `translateX(-${index * 100}vw)`;
+  dots.forEach(d => d.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+let startX = 0;
+
+container.addEventListener("touchstart", e=>{
+  startX = e.touches[0].clientX;
+});
+
+container.addEventListener("touchend", e=>{
+  let endX = e.changedTouches[0].clientX;
+
+  if(startX > endX + 50 && index < totalSlides - 1) index++;
+  else if(startX < endX - 50 && index > 0) index--;
+
+  update();
+});
+</script>
+
+</body>
+</html>
